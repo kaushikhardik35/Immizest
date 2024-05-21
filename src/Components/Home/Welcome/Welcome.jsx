@@ -47,23 +47,28 @@ const Welcome = () => {
           step of your journey.
         </div>{" "}
       </div>{" "}
-      <div className="m-4 p-5 md:grid  items-center md:grid-row md:grid-cols-8 md:gap-4">
-        <div className=" md:col-span-2 w-full justify-between items-center flex md:flex-col flex-row text-[65px] md:text-[120px]">
-          {sections.map((section, index) => (
-            <img
-              key={index}
-              src={section.imageUrl}
-              alt={section.title}
-              className="md:w-[100px] md:h-=[100px] h-[70px] w-[70px] cursor-pointer p-1 rounded-full"
-              onClick={() => setSelectedSection(section)}
-            />
-          ))}
+      <div className="m-4 p-5 md:grid  items-center md:grid-row md:grid-cols-9 md:gap-4">
+        <div className=" hidden md:block text-orange-300  md:col-span-4 w-full justify-between items-center flex md:flex-col flex-row text-[50px] md:text-[80px]">
+          Our <br /> Commitment <br />
+          to you
         </div>
-
         {/* Right side with details */}
-        <div className=" md:col-span-5  subpixel-antialiased text-xl md:text-2xl text-justify ">
-          <h2 className="text-2xl font-bold mb-4">{selectedSection.title}</h2>
-          <p>{selectedSection.details}</p>
+        <div className=" md:col-span-5  subpixel-antialiased flex flex-col text-xl md:text-2xl text-justify ">
+          <div className="flex flex-row w-full items-center justify-around">
+            {sections.map((section, index) => (
+              <img
+                key={index}
+                src={section.imageUrl}
+                alt={section.title}
+                className="md:w-[100px] md:h-=[100px] h-[70px] w-[70px] cursor-pointer p-1 rounded-full"
+                onClick={() => setSelectedSection(section)}
+              />
+            ))}
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">{selectedSection.title}</h2>
+            <p>{selectedSection.details}</p>
+          </div>
         </div>
       </div>
       {/* Why Choose us: At ImmiZest, we take pride in the achievements of our
