@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import Hero from "../Components/Hero/Hero";
+import Navbar from "../Components/Home/Navbar/Navbar";
+import Hero from "../Components/Home/Hero/Hero";
+import Welcome from "../Components/Home/Welcome/Welcome";
 const Home = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Home = () => {
       >
         <Navbar className="sticky top-0" />
         <Hero />
+        <Welcome />
       </div>
     </>
   );
