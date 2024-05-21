@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <div
-        className="min-h-screen w-full bg-[#f7f7f7]"
+        className="min-h-screen w-full "
         // style={{
         //   backgroundImage: `url("/background2.jpeg")`,
         //   backgroundPosition: "center",

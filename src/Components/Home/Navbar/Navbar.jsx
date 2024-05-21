@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex md:flex-row flex-col justify-between p-4 shadow-md">
+    <div className="w-full flex bg-[#f7f7f7]  sticky-top sticky top-0 z-[999] md:flex-row flex-col justify-between p-1 shadow-md">
       <div className="flex justify-between items-start">
         <img
           className="logo h-[50px] md:h-[70px] z-[1]"
@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="sm:flex md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-[#4754a4] focus:outline-none"
+            className="text-[#4754a4]  focus:outline-none"
           >
             <svg
               className={`w-6 h-6 transform transition-transform duration-300 ${

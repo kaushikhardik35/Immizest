@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useState, useEffect } from "react";
 
 const sections = [
   {
@@ -28,16 +30,49 @@ const sections = [
     imageUrl: "https://cdn-icons-png.flaticon.com/512/751/751432.png",
   },
 ];
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Welcome = () => {
   const [selectedSection, setSelectedSection] = useState(sections[0]);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".welcome",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".welcome",
+          start: "top 80%", // when the top of the trigger hits 80% from the top of the viewport
+          end: "bottom 20%", // when the bottom of the trigger hits 20% from the top of the viewport
+          scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
+      }
+    );
+    gsap.fromTo(
+      ".givings",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".givings",
+          start: "top 80%", // when the top of the trigger hits 80% from the top of the viewport
+          end: "bottom 20%", // when the bottom of the trigger hits 20% from the top of the viewport
+          scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        },
+      }
+    );
+  }, []);
+
   return (
     <div>
-      <div className="m-8 p-5 md:grid md:grid-row md:grid-cols-5 md:gap-4">
-        <div className=" md:col-span-3 text-[65px] md:text-[120px]">
-          <span className="text-[#4754a4] #e93f3b">Welcome to </span>{" "}
+      <div className="bg-blue-100 m-0 px-10 py-5 md:grid md:grid-row md:grid-cols-5 md:gap-4">
+        <div className="md:col-span-3 text-[65px] welcome md:text-[120px]">
+          <span className="text-[#4754a4]">Welcome to </span>{" "}
           <span className="text-[#e93f3b]">ImmiZest</span>
-        </div>{" "}
-        <div className="md:col-span-2 subpixel-antialiased text-xl md:text-2xl text-justify  ">
+        </div>
+        <div className=" md:col-span-2 subpixel-antialiased text-xl md:text-2xl text-justify">
           At ImmiZest, we are dedicated to helping you navigate the complex
           world of global education. With our expert guidance and personalized
           consulting approach, we tailor our services to meet your unique
@@ -45,22 +80,18 @@ const Welcome = () => {
           Canada, the USA, Australia, or other leading educational destinations,
           we provide a comprehensive suite of services designed to support every
           step of your journey.
-        </div>{" "}
-      </div>{" "}
-      <div className="m-4 p-5 md:grid  items-center md:grid-row md:grid-cols-9 md:gap-4">
-        <div className=" hidden md:block text-orange-300  md:col-span-4 w-full justify-between items-center flex md:flex-col flex-row text-[50px] md:text-[80px]">
-          Our <br /> Commitment <br />
-          to you
         </div>
+      </div>
+      <div className="m-4 p-5 md:grid h-[500px] md:grid-row md:grid-cols-9 md:gap-4">
         {/* Right side with details */}
-        <div className=" md:col-span-5  subpixel-antialiased flex flex-col text-xl md:text-2xl text-justify ">
-          <div className="flex flex-row w-full items-center justify-around">
+        <div className="md:col-span-5  subpixel-antialiased flex flex-col text-xl md:text-2xl text-justify">
+          <div className="flex flex-row w-full items-start justify-between">
             {sections.map((section, index) => (
               <img
                 key={index}
                 src={section.imageUrl}
                 alt={section.title}
-                className="md:w-[100px] md:h-=[100px] h-[70px] w-[70px] cursor-pointer p-1 rounded-full"
+                className="md:w-[100px] md:h-[100px] h-[70px] w-[70px] cursor-pointer p-1 rounded-full"
                 onClick={() => setSelectedSection(section)}
               />
             ))}
@@ -70,11 +101,15 @@ const Welcome = () => {
             <p>{selectedSection.details}</p>
           </div>
         </div>
+        <div className="hidden md:block givings text-orange-300 md:col-span-4 w-full items-end  flex text-right md:flex-col flex-row text-[50px] md:text-[80px]">
+          Our <br /> Commitment <br />
+          to you
+        </div>
       </div>
       {/* Why Choose us: At ImmiZest, we take pride in the achievements of our
-      students and their journeys to global educational excellence.(We will add
-      the Dynamic Pictures and Testimonials of around 15 students in this part)
-      and give a CTA: Start Your Journey */}
+          students and their journeys to global educational excellence.(We will add
+          the Dynamic Pictures and Testimonials of around 15 students in this part)
+          and give a CTA: Start Your Journey */}
     </div>
   );
 };

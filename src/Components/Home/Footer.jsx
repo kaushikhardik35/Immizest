@@ -27,7 +27,7 @@ export default function Footer() {
       invertedColors
       sx={{
         ...(color !== "neutral" && {
-          bgcolor: `red`,
+          bgcolor: `#F5FAFE`,
         }),
         flexGrow: 1,
         p: 2,
