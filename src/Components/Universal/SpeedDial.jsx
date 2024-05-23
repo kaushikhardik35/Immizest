@@ -8,6 +8,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { redirect } from "react-router-dom";
 
 const actions = [
@@ -29,6 +30,11 @@ const actions = [
   {
     icon: <FacebookIcon />,
     name: "Facebook",
+    redirect: "https://www.facebook.com/ImmiZest/",
+  },
+  {
+    icon: <WhatsAppIcon />,
+    name: "WhatsApp",
     redirect: "https://www.facebook.com/ImmiZest/",
   },
 ];
