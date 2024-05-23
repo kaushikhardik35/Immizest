@@ -21,7 +21,10 @@ const Hero = () => {
         <source src="/introVideo.mp4" />
       </video>
       <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center md:justify-start md:ml-20 md:mt-32">
-        <h1 className="text-shadow text-[#4754a4] md:text-7xl md:w-[500px] text-2xl md:text-left text-center font-bold mb-6">
+        <h1
+          style={{ textShadow: "2px 8px #08735d" }}
+          className="text-shadow text-[#47bc8d]  md:text-7xl md:w-[500px] text-2xl md:text-left text-center font-bold mb-6"
+        >
           Opening Doors to Global Education
         </h1>
         <div className="flex  justify-around flex-row">
@@ -33,7 +36,8 @@ const Hero = () => {
               borderRadius: "3px",
               opacity: 1,
             }}
-            className="h-[50px] md:mt-8 md:w-[300px] w-[200px] px-3 py-1 text-white font-bold text-[18px] text-center rounded cursor-pointer"
+            onClick={() => (window.location.href = "/web-progressive-flow")}
+            className="h-[50px] hover:scale-110 duration-700 md:mt-8 md:w-[300px] w-[200px] px-3 py-1 text-white font-bold text-[18px] text-center rounded cursor-pointer"
           >
             Start your journey
           </button>

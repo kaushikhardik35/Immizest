@@ -13,6 +13,7 @@ const Navbar = () => {
     <div className="w-full flex bg-[#f7f7f7]  sticky-top sticky top-0 z-[999] md:flex-row flex-col justify-between p-1 shadow-md">
       <div className="flex justify-between items-start">
         <img
+          onClick={() => (window.location.href = "/")}
           className="logo h-[50px] md:h-[70px] z-[1]"
           src="/transparent_logo.jpeg"
           alt="Logo"

@@ -50,8 +50,8 @@ const Welcome = () => {
           }}
         >
           <FaPlane
-            className="hidden md:block text-white text-8xl"
-            style={{ animation: "fly-plane 5s infinite" }}
+            className="hidden md:block  text-white text-8xl"
+            style={{ animation: "fly-plane 5s infinite " }}
           />
         </div>
       </div>
