@@ -2,7 +2,7 @@ import React from "react";
 
 const NewPage = () => {
   return (
-    <div className="grid grid-cols-2 gap-8 p-8 bg-gray-100">
+    <div className="grid md:grid-cols-2 gap-8 p-8 bg-gray-100">
       {/* Customized Educational Plans Section */}
       <div className="bg-gradient-to-r from-blue-200 to-green-100 rounded-lg shadow-md p-6">
         <div className="text-3xl font-bold text-blue-800 mb-4">

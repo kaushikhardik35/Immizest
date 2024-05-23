@@ -52,7 +52,7 @@ const TestPreparation = () => {
         <div className="flex justify-center items-center md:w-1/3">
           <img
             className="w-full h-auto rounded-lg shadow-md"
-            src="tempImg.png"
+            src="testPrepSupport.png"
             alt="Test Preparation Support"
           />
         </div>

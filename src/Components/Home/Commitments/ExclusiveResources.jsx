@@ -52,7 +52,7 @@ const ExclusiveResources = () => {
         <div className="hidden lg:flex lg:w-1/3 items-center justify-center">
           <img
             className="max-w-full h-auto rounded-md shadow-md"
-            src="tempImg.png"
+            src="exclusiveResources.jpeg"
             alt="Exclusive Resources"
           />
         </div>
