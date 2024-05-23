@@ -22,8 +22,8 @@ const Hero = () => {
       </video>
       <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center md:justify-start md:ml-20 md:mt-32">
         <h1
-          style={{ textShadow: "2px 8px #08735d" }}
-          className="text-shadow text-[#47bc8d]  md:text-7xl md:w-[500px] text-2xl md:text-left text-center font-bold mb-6"
+          style={{ textShadow: "2px 8px #747474" }}
+          className="text-shadow text-white  md:text-7xl md:w-[500px] text-2xl md:text-left text-center font-bold mb-6"
         >
           Opening Doors to Global Education
         </h1>
