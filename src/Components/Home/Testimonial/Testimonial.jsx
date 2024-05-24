@@ -6,8 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 const testimonials = [
   {
     id: "1",
-    videoId: "dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+
+    thumbnail:
+      "https://drive.google.com/thumbnail?id=1Bs_eYyyrJUXtncxRz8iIwqzU-sjzsO95&sz=w1000",
     title: "Testimonial 1",
   },
   {
@@ -19,37 +20,64 @@ const testimonials = [
   },
   {
     id: "3",
-    videoId: "3JZ_D3ELwOQ",
-    thumbnail: "https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg",
+
+    thumbnail:
+      "https://drive.google.com/thumbnail?id=16J8leFmKT-UNjto0LS3nniRZfqk6YYZ7&sz=w1000",
     title: "Testimonial 3",
   },
   {
     id: "4",
-    videoId: "dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+
+    thumbnail:
+      "https://lh3.googleusercontent.com/d/1vJSPPYXUGwhq7rwQDKLijFSiCSoIG8aT=w1000",
     title: "Testimonial 4",
   },
   {
     id: "5",
-    videoId: "5qap5aO4i9A",
-    thumbnail: "https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg",
+
+    thumbnail:
+      "https://drive.google.com/thumbnail?id=1a12egl40Wa_lgc1sdzN4dpMwU3_mYg5C&sz=w1000",
     title: "Testimonial 5",
   },
   {
     id: "6",
-    videoId: "3JZ_D3ELwOQ",
-    thumbnail: "https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg",
+
+    thumbnail:
+      "https://drive.google.com/thumbnail?id=1C-vQuMznUV4LUAAmKQAi4Bb3LF1u69Yw&sz=w1000",
     title: "Testimonial 6",
   },
-  // Add more testimonials as needed
+  {
+    id: "7",
+
+    thumbnail:
+      "https://drive.google.com/thumbnail?id=1NAinozbTz8EafVoTZSyf7L7hGfKOKLvP&sz=w1000",
+    title: "Testimonial 7",
+  },
+  {
+    id: "8",
+
+    thumbnail:
+      "https://lh3.googleusercontent.com/d/1fUFrQftk0iRoGNTsvaOKPfYhZ6AfpI0F=w1000",
+    title: "Testimonial 8",
+  },
+  {
+    id: "9",
+
+    thumbnail:
+      "https://lh3.googleusercontent.com/d/1giSBfajPE8LbKuAAXKtfSIEotWx9wT53=w1000",
+    title: "Testimonial 9",
+  },
 ];
 
 const Testimonial = () => {
   const [selectedVideoId, setSelectedVideoId] = useState(null);
   const [isAutoScroll, setAutoScroll] = useState(true);
-  const handleThumbnailClick = (videoId) => {
-    setAutoScroll(false);
-    setSelectedVideoId(videoId);
+  const handleThumbnailClick = (id, videoId) => {
+    console.log(videoId);
+    if (videoId) {
+      setAutoScroll(false);
+    } else setAutoScroll(true);
+    setSelectedVideoId(id);
   };
 
   const sliderSettings = {
@@ -60,7 +88,7 @@ const Testimonial = () => {
     slidesToScroll: 3,
     autoplay: isAutoScroll,
     infinte: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 200,
     responsive: [
       {
         breakpoint: 1150,
@@ -101,8 +129,26 @@ const Testimonial = () => {
             <div
               key={testimonial.id}
               className="testimonial-item p-4 cursor-pointer relative"
-              onClick={() => handleThumbnailClick(testimonial.videoId)}
+              onClick={() =>
+                handleThumbnailClick(testimonial.id, testimonial.videoId)
+              }
             >
+              {testimonial.videoId && ( // Check if videoId exists
+                <div className="play-button absolute inset-0 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-16 w-16 text-white opacity-75"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8.645 5.2L14.2 9.983l-5.555 4.783V5.2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              )}
               <img
                 src={testimonial.thumbnail}
                 alt={testimonial.title}
@@ -110,15 +156,15 @@ const Testimonial = () => {
                   selectedVideoId === testimonial.videoId ? "hidden" : "block"
                 }`}
               />
-              {selectedVideoId === testimonial.videoId && (
+              {testimonial.videoId && selectedVideoId === testimonial.id && (
                 <div
-                  className="video-player w-48 h-96 rounded-lg shadow-md transition duration-300 absolute m-4  top-0 left-0"
+                  className="video-player w-48 h-96 rounded-lg shadow-md transition duration-300 absolute m-4 top-0 left-0"
                   style={{ marginTop: "10px" }}
                 >
                   <iframe
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/${selectedVideoId}`}
+                    src={`https://www.youtube.com/embed/${testimonial.videoId}`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

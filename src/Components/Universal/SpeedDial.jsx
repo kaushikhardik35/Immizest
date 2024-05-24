@@ -9,7 +9,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { redirect } from "react-router-dom";
 
 const actions = [
   {
@@ -42,12 +41,12 @@ const actions = [
 export default function SocialMediaSpeedDial() {
   return (
     <Box
-      className=" fixed top-0 z-50 bottom-0 h-full w-full "
+      className="fixed z-[1000000] bottom-0 right-0 "
       sx={{ transform: "translateZ(0px)", flexGrow: 1 }}
     >
       <SpeedDial
         ariaLabel="SpeedDial social media example"
-        sx={{ position: "fixed", bottom: "16px", right: "16px" }}
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
         icon={<ConnectWithoutContactIcon />}
       >
         {actions.map((action) => (
