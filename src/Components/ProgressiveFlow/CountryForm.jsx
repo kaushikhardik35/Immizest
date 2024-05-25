@@ -125,7 +125,7 @@ const ProgressiveFlowForm = () => {
     data.testStatus = testStatus;
     data.scholarshipExamStatus = scholarshipExamStatus;
     fetch(
-      "https://script.google.com/macros/s/AKfycbxMbYvpBl34uOl8Al5Vb13QGQn6VS5pXoodQF4MgwQcNh5NGiYbD2ajrx_Po_yi8kan/exec",
+      "https://script.google.com/macros/s/AKfycbwU09KgIXElDJbm3qEhiDeCQxKHfGbX_-_ffJ_bXKDRL3G8HkMtps8EwNkx5GBeVCF6/exec",
       {
         method: "POST",
         body: new URLSearchParams(data),
